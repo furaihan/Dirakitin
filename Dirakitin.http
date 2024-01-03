@@ -1,0 +1,6 @@
+@Dirakitin_HostAddress = http://localhost:5121
+
+GET {{Dirakitin_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
