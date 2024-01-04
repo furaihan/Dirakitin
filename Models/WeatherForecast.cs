@@ -1,4 +1,4 @@
-namespace Dirakitin
+namespace Dirakitin.Models
 {
     public class WeatherForecast
     {

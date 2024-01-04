@@ -1,3 +1,4 @@
+using Dirakitin.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dirakitin.Controllers
