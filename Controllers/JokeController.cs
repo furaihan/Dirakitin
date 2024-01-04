@@ -9,8 +9,8 @@ namespace Dirakitin.Controllers
     public class JokeController : ControllerBase
     {
         private HttpClient _httpClient;
-        private readonly ILogger<WeatherForecastController> _logger;
-        public JokeController(HttpClient httpClient, ILogger<WeatherForecastController> logger)
+        private readonly ILogger<JokeController> _logger;
+        public JokeController(HttpClient httpClient, ILogger<JokeController> logger)
         {
             _httpClient = httpClient;
             _logger = logger;
