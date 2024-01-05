@@ -1,4 +1,8 @@
 
+using Dirakitin.Models;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
+
 namespace Dirakitin
 {
     public class Program
@@ -11,6 +15,11 @@ namespace Dirakitin
 
             builder.Services.AddLogging();
             builder.Services.AddHttpClient();
+            builder.Services.AddDbContext<AppDbContext>(options=>
+            {
+                string connectionString = builder.Configuration.GetConnectionString("Dirakitin");
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            });
             builder.Services.AddControllers().AddControllersAsServices();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
