@@ -2,6 +2,7 @@
 using Dirakitin.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dirakitin.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240106092305_Validation")]
+    partial class Validation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,27 +41,6 @@ namespace Dirakitin.Migrations
                     b.HasKey("NIM");
 
                     b.ToTable("Mahasiswa");
-                });
-
-            modelBuilder.Entity("Dirakitin.Models.MataKuliah", b =>
-                {
-                    b.Property<string>("KodeMK")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<byte>("JumlahSKS")
-                        .HasColumnType("tinyint unsigned");
-
-                    b.Property<string>("Keterangan")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Nama")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.HasKey("KodeMK");
-
-                    b.ToTable("MataKuliah");
                 });
 #pragma warning restore 612, 618
         }

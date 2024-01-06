@@ -4,5 +4,6 @@
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
         public DbSet<Mahasiswa> Mahasiswa { get; set; } = null;
+        public DbSet<MataKuliah> MataKuliah { get; set;} = null;
     }
 }
