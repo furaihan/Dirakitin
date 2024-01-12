@@ -13,5 +13,6 @@ namespace Dirakitin.Models
         public byte JumlahSKS { get;set; }
         [DataType(DataType.Text)]
         public string Keterangan { get; set; }
+        public List<KelasMengajar> Kelas {  get; set; }
     }
 }
