@@ -16,7 +16,7 @@ function mainPage() {
       {/* Main page */}
 
       {/* Background */}
-      <div className="bg-[url('/src/assets/background.png')] bg-cover bg-local bg-[center_bottom_4rem] bg-no-repeat">
+      <div className="bg-[url('/src/assets/background.png')] bg-cover bg-local bg-bottom bg-no-repeat">
         {/* Simualation */}
         <div className="flex h-auto w-screen items-center justify-center p-20">
           {/* simulation 1/3 = Componenent Part PC button*/}
@@ -24,7 +24,7 @@ function mainPage() {
             <ComponentPartButton icon="/src/assets/cpu.svg" text="CPU" />
             <ComponentPartButton
               icon="/src/assets/motherboard.svg"
-              text="MotherBoard"
+              text="Motherboard"
             />
             <ComponentPartButton icon="/src/assets/gpu.svg" text="GPU" />
             <ComponentPartButton icon="/src/assets/psu.svg" text="PSU" />
