@@ -45,12 +45,12 @@ export default function CasualPartModal({
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden overflow-x-hidden outline-none focus:outline-none">
             <div className="relative mx-auto my-6 flex h-screen w-screen max-w-3xl items-center justify-center">
               {/* Modal Content*/}
-              <div className="relative flex h-3/5 w-5/6 flex-col gap-12 rounded-3xl border-0 bg-gray-700 px-16 py-10 shadow-lg outline-none focus:outline-none">
+              <div className="relative flex h-3/5 w-11/12 flex-col gap-12 rounded-3xl border-0 bg-gray-700 px-16 py-10 shadow-lg outline-none focus:outline-none">
                 {/* Choose item */}
                 <form
                   id=""
                   method=""
-                  className="flex flex-col justify-center gap-5 align-middle"
+                  className="flex flex-col justify-center gap-3 align-middle"
                 >
                   <span className="font-trispace text-3xl font-medium text-white">
                     {text}:
@@ -63,7 +63,7 @@ export default function CasualPartModal({
                 </form>
 
                 {/* How Many sir ? */}
-                <form id="" action="" method="" className="flex flex-col gap-5">
+                <form id="" action="" method="" className="flex flex-col gap-3">
                   <span className="font-trispace text-3xl font-medium text-white">
                     Jumlah:
                   </span>
@@ -77,7 +77,7 @@ export default function CasualPartModal({
                 </form>
 
                 {/* total */}
-                <div className="flex flex-col justify-center gap-4 align-middle">
+                <div className="flex flex-col justify-center gap-3 align-middle">
                   <span className="font-trispace text-3xl font-medium text-white">
                     Total:
                   </span>
@@ -97,7 +97,7 @@ export default function CasualPartModal({
 
                 {/* Button OK */}
                 <button
-                  className="flex items-center justify-center rounded-2xl bg-blue-600 px-16 py-3.5 text-sm font-bold uppercase text-white outline-none transition-all duration-150 ease-linear hover:bg-slate-500"
+                  className="mt-auto flex items-center justify-center rounded-2xl bg-blue-600 px-16 py-3.5 text-sm font-bold uppercase text-white outline-none transition-all duration-150 ease-linear hover:bg-slate-500"
                   type="button"
                   onClick={() => setShowModal(false)}
                 >

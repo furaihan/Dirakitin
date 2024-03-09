@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AdditionalButton from "../component/AdditionalButton";
 import CasualPartModal from "../component/CasualPartModal";
 import SpesificPartModal from "../component/SpesificPartModal";
+import AccessoriesModal from "../component/AccessoriesModal";
 
 function mainPage() {
   const [hoveredImage, setHoveredImage] = useState(
@@ -42,6 +43,11 @@ function mainPage() {
               onMouseLeave={() =>
                 handleHoverImageChange("/src/assets/allpartcomponent.png")
               }
+              placeholder={"Cari CPU..."}
+              selectionIcon1={"/src/assets/Intel.svg"}
+              selectionIcon2={"/src/assets/AMD.svg"}
+              selectionText1={""}
+              selectionText2={""}
             />
 
             {/* Button Part Mother Board */}
@@ -108,6 +114,7 @@ function mainPage() {
               onMouseLeave={() =>
                 handleHoverImageChange("/src/assets/allpartcomponent.png")
               }
+              placeholder={"Cari RAM..."}
             />
 
             {/* Button Part Storage */}
@@ -122,6 +129,11 @@ function mainPage() {
               onMouseLeave={() =>
                 handleHoverImageChange("/src/assets/allpartcomponent.png")
               }
+              placeholder={"Cari Storage..."}
+              selectionIcon1={"/src/assets/ssd_icon.svg"}
+              selectionIcon2={"/src/assets/hdd_icon.svg"}
+              selectionText1={"SSD"}
+              selectionText2={"HDD"}
             />
 
             {/* Button Part Cooling Fan */}
@@ -136,6 +148,11 @@ function mainPage() {
               onMouseLeave={() =>
                 handleHoverImageChange("/src/assets/allpartcomponent.png")
               }
+              placeholder={"Cari Cooling Fan..."}
+              selectionIcon1={"/src/assets/aircooler_icon.svg"}
+              selectionIcon2={"/src/assets/watercooler_icon.svg"}
+              selectionText1={"Air Cooler"}
+              selectionText2={"Water Cooler"}
             />
 
             {/* Button Part casing */}
@@ -150,17 +167,16 @@ function mainPage() {
               onMouseLeave={() =>
                 handleHoverImageChange("/src/assets/allpartcomponent.png")
               }
+              placeholder={"Cari Casing..."}
             />
           </div>
         </div>
 
         {/* Accessories Modal Button*/}
         <div className="flex h-auto w-screen flex-col items-start justify-center gap-14 px-28">
-          <AdditionalButton
-            text="Aksesoris"
-            icon1="/src/assets/plus.svg"
-            icon2="/src/assets/minus.svg"
-            alt="plus"
+          <AccessoriesModal
+            icon1={"/src/assets/plus.svg"}
+            icon2={"/src/assets/minus.svg"}
           />
           <AdditionalButton
             text="Pratinjau"
