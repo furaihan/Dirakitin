@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AdditionalButton from "./AdditionalButton";
+import AdditionalButton from "../organism/AdditionalButton";
 
 export default function AccessoriesModal({ icon1, icon2 }) {
   const [showModal, setShowModal] = useState(false);

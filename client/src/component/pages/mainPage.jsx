@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import AdditionalButton from "../component/AdditionalButton";
-import CasualPartModal from "../component/CasualPartModal";
-import SpesificPartModal from "../component/SpesificPartModal";
-import AccessoriesModal from "../component/AccessoriesModal";
+import AdditionalButton from "../organism/AdditionalButton";
+import CasualPartModal from "../organism/CasualPartModal";
+import SpesificPartModal from "../organism/SpesificPartModal";
+import AccessoriesModal from "../molecule/AccessoriesModal";
+import NavigationBar from "../organism/NavigationBar";
 
 function mainPage() {
   const [hoveredImage, setHoveredImage] = useState(
-    "/src/assets/allpartcomponent.png",
+    "/src/assets/images/allpartcomponent.png",
   );
 
   const handleHoverImageChange = (newImage) => {
@@ -17,16 +18,12 @@ function mainPage() {
     // container
     <div className="flex h-screen w-screen flex-col items-center justify-start bg-indigo-950">
       {/* header */}
-      <div className="flex h-28 w-screen items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-        <h1 className="font-trispace text-5xl font-semibold text-white">
-          Dirakitin
-        </h1>
-      </div>
+      <NavigationBar title={"Dirakitin"} />
 
       {/* Main page */}
 
       {/* Background */}
-      <div className="bg-[url('/src/assets/background.png')] bg-cover bg-local bg-bottom bg-no-repeat">
+      <div className="bg-[url('/src/assets/images/background.png')] bg-cover bg-local bg-bottom bg-no-repeat">
         {/* Simualation */}
         <div className="flex h-auto w-screen items-center justify-center p-20">
           {/* simulation 1/3 = Componenent Part PC button*/}
@@ -34,33 +31,39 @@ function mainPage() {
             {/* Button Part CPU */}
             <SpesificPartModal
               selectedComponent="left"
-              icon="/src/assets/cpu.svg"
+              icon="/src/assets/icons/cpu.svg"
               text="CPU"
               positionStyle={{ transform: "translateX(-70%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/CPU_invisible.png")
+                handleHoverImageChange("/src/assets/images/CPU_invisible.png")
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari CPU..."}
-              selectionIcon1={"/src/assets/Intel.svg"}
-              selectionIcon2={"/src/assets/AMD.svg"}
-              selectionText1={""}
-              selectionText2={""}
+              selectionIcon1={"/src/assets/icons/intel-logo.svg"}
+              selectionIcon2={"/src/assets/icons/AMD-logo.svg"}
+              selectionText1={"Intel"}
+              selectionText2={"AMD"}
             />
 
             {/* Button Part Mother Board */}
             <CasualPartModal
               selectedComponent="left"
-              icon="/src/assets/motherboard.svg"
+              icon="/src/assets/icons/motherboard.svg"
               text="Motherboard"
               positionStyle={{ transform: "translateX(-10%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/Motherboard_invisible.png")
+                handleHoverImageChange(
+                  "/src/assets/images/Motherboard_invisible.png",
+                )
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari MotherBoard..."}
             />
@@ -68,14 +71,16 @@ function mainPage() {
             {/* Button Part GPU */}
             <CasualPartModal
               selectedComponent="left"
-              icon="/src/assets/gpu.svg"
+              icon="/src/assets/icons/gpu.svg"
               text="GPU"
               positionStyle={{ transform: "translateX(-80%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/GPU_invisible.png")
+                handleHoverImageChange("/src/assets/images/GPU_invisible.png")
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari GPU..."}
             />
@@ -83,21 +88,27 @@ function mainPage() {
             {/* Button Part PSU */}
             <CasualPartModal
               selectedComponent="left"
-              icon="/src/assets/psu.svg"
+              icon="/src/assets/icons/psu.svg"
               text="PSU"
               positionStyle={{ transform: "translateX(-50%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/PSU_invisible.png")
+                handleHoverImageChange("/src/assets/images/PSU_invisible.png")
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
             />
           </div>
 
           {/* simulation 2/3 = Simulation Image PC*/}
           <div className="flex h-full w-1/3 items-center justify-center">
-            <img src={hoveredImage} alt="Motherboard" />
+            <img
+              src={hoveredImage}
+              alt="Motherboard"
+              className="drop-shadow-2xl transition-all duration-300 ease-in-out"
+            />
           </div>
 
           {/* simulation 3/3 = Componenent Part PC button*/}
@@ -105,14 +116,16 @@ function mainPage() {
             {/* Button Part RAM */}
             <CasualPartModal
               selectedComponent="right"
-              icon="/src/assets/ram.svg"
+              icon="/src/assets/icons/ram.svg"
               text="RAM"
               positionStyle={{ transform: "translateX(55%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/RAM_invisible.png")
+                handleHoverImageChange("/src/assets/images/RAM_invisible.png")
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari RAM..."}
             />
@@ -120,18 +133,22 @@ function mainPage() {
             {/* Button Part Storage */}
             <SpesificPartModal
               selectedComponent="right"
-              icon="/src/assets/storage.svg"
+              icon="/src/assets/icons/storage.svg"
               text="Storage"
               positionStyle={{ transform: "translateX(15%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/Storage_invisible.png")
+                handleHoverImageChange(
+                  "/src/assets/images/Storage_invisible.png",
+                )
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari Storage..."}
-              selectionIcon1={"/src/assets/ssd_icon.svg"}
-              selectionIcon2={"/src/assets/hdd_icon.svg"}
+              selectionIcon1={"/src/assets/icons/ssd_icon.svg"}
+              selectionIcon2={"/src/assets/icons/hdd_icon.svg"}
               selectionText1={"SSD"}
               selectionText2={"HDD"}
             />
@@ -139,18 +156,22 @@ function mainPage() {
             {/* Button Part Cooling Fan */}
             <SpesificPartModal
               selectedComponent="right"
-              icon="/src/assets/coolingfan.svg"
+              icon="/src/assets/icons/coolingfan.svg"
               text="Cooling System"
               positionStyle={{ transform: "translateX(0%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/CoolingFan_invisible.png")
+                handleHoverImageChange(
+                  "/src/assets/images/CoolingFan_invisible.png",
+                )
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari Cooling Fan..."}
-              selectionIcon1={"/src/assets/aircooler_icon.svg"}
-              selectionIcon2={"/src/assets/watercooler_icon.svg"}
+              selectionIcon1={"/src/assets/icons/aircooler_icon.svg"}
+              selectionIcon2={"/src/assets/icons/watercooler_icon.svg"}
               selectionText1={"Air Cooler"}
               selectionText2={"Water Cooler"}
             />
@@ -158,14 +179,16 @@ function mainPage() {
             {/* Button Part casing */}
             <CasualPartModal
               selectedComponent="right"
-              icon="/src/assets/casing.svg"
+              icon="/src/assets/icons/casing.svg"
               text="Case"
               positionStyle={{ transform: "translateX(40%)" }}
               onMouseEnter={() =>
-                handleHoverImageChange("/src/assets/case_invisible.png")
+                handleHoverImageChange("/src/assets/images/case_invisible.png")
               }
               onMouseLeave={() =>
-                handleHoverImageChange("/src/assets/allpartcomponent.png")
+                handleHoverImageChange(
+                  "/src/assets/images/allpartcomponent.png",
+                )
               }
               placeholder={"Cari Casing..."}
             />
@@ -175,18 +198,17 @@ function mainPage() {
         {/* Accessories Modal Button*/}
         <div className="flex h-auto w-screen flex-col items-start justify-center gap-14 px-28">
           <AccessoriesModal
-            icon1={"/src/assets/plus.svg"}
-            icon2={"/src/assets/minus.svg"}
+            icon1={"/src/assets/icons/plus.svg"}
+            icon2={"/src/assets/icons/minus.svg"}
           />
           <AdditionalButton
             text="Pratinjau"
-            icon1="/src/assets/closedeye.svg"
-            icon2={"/src/assets/openeye.svg"}
+            icon1="/src/assets/icons/closedeye.svg"
+            icon2={"/src/assets/icons/openeye.svg"}
             alt="eye"
           />
         </div>
       </div>
-
       {/* Summary Break*/}
     </div>
   );

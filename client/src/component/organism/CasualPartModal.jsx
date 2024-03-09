@@ -1,6 +1,5 @@
 import React from "react";
-import PartButtonLeft from "./PartButtonLeft";
-import PartButtonRight from "./PartButtonRight";
+import PartButton from "../atom/PartButton";
 
 export default function CasualPartModal({
   selectedComponent,
@@ -17,7 +16,7 @@ export default function CasualPartModal({
       <div>
         {/* Calling Button with icon in the left side */}
         {selectedComponent === "left" && (
-          <PartButtonLeft
+          <PartButton
             icon={icon}
             text={text}
             positionStyle={positionStyle}
@@ -28,13 +27,14 @@ export default function CasualPartModal({
         )}
         {/* Calling Button with icon in the right side */}
         {selectedComponent === "right" && (
-          <PartButtonRight
+          <PartButton
             icon={icon}
             text={text}
             positionStyle={positionStyle}
             onClick={() => setShowModal(true)}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            isIconOnLeft={false}
           />
         )}
       </div>

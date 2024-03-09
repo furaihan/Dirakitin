@@ -1,6 +1,5 @@
 import React from "react";
-import PartButtonLeft from "./PartButtonLeft";
-import PartButtonRight from "./PartButtonRight";
+import PartButton from "../atom/PartButton";
 
 export default function SpesificPartModal({
   selectedComponent,
@@ -21,7 +20,7 @@ export default function SpesificPartModal({
       <div>
         {/* Calling Button with icon in the left side */}
         {selectedComponent === "left" && (
-          <PartButtonLeft
+          <PartButton
             icon={icon}
             text={text}
             positionStyle={positionStyle}
@@ -32,13 +31,14 @@ export default function SpesificPartModal({
         )}
         {/* Calling Button with icon in the right side */}
         {selectedComponent === "right" && (
-          <PartButtonRight
+          <PartButton
             icon={icon}
             text={text}
             positionStyle={positionStyle}
             onClick={() => setShowModal(true)}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            isIconOnLeft={false}
           />
         )}
       </div>
